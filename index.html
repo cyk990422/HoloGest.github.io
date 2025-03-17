@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<style type="text/css">
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35); /* The third layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>TapMo</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    });
+
+
+
+
+  </script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TapMo: Shape-aware Motion Generation of Skeleton-free Characters</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=jUAyNjEAAAAJ&hl=en"
+                   target="_blank">Jiaxu Zhang</a><sup>1</sup><sup>†</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Shaoli Huang</a><sup>2</sup><sup>†</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Zhigang Tu</a><sup>1</sup><sup>*</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Xin Chen</a><sup>3</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Xiaohang Zhan</a><sup>2</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Gang Yu</a><sup>3</sup>,</span>
+            <span class="author-block">
+                <a href="" target="_blank">Ying Shan</a><sup>2</sup>,</span>
+            <span class="author-block"></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Wuhan University, <sup>2</sup>Tencent AI Lab, <sup>2</sup>Tencent PCG
+                      <!-- <br>ICLR 2024</span> -->
+                      <!--<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>-->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+                <a href="" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Supplementary PDF link
+              <span class="link-block">
+                <a href="static/pdfs/CVPR_2023_R2ET_supply.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Supplementary</span>
+              </a>
+            </span> -->
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/Kebii/TapMo" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+              <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.12678" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <center>
+      <img class="round" style="width:850px" src="static/images/teaser.jpg"/>
+    </center>
+    <h2 class="subtitle has-text-centered">
+      TapMo</span> is a text-based animation pipeline for generating motion in a wide variety of skeleton-free
+      characters.
+    </h2>
+
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">+
+        <!-- Your video here -->
+        <source src="./static/videos/demo_video2_arxiv.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Previous motion generation methods are limited to the pre-rigged 3D human model, hindering their
+            applications in the animation of various non-rigged characters. In this work, we present TapMo, a
+            Text-driven Animation Pipeline for synthesizing Motion in a broad spectrum of skeleton-free 3D characters.
+            The pivotal innovation in TapMo is its use of shape deformation-aware features as a condition to guide the
+            diffusion model, thereby enabling the generation of mesh-specific motions for various characters.
+            Specifically, TapMo comprises two main components - Mesh Handle Predictor and Shape-aware Diffusion Module.
+            Mesh Handle Predictor predicts the skinning weights and clusters mesh vertices into adaptive handles for
+            deformation control, which eliminates the need for traditional skeletal rigging. Shape-aware Motion
+            Diffusion synthesizes motion with mesh-specific adaptations. This module employs text-guided motions and
+            mesh features extracted during the first stage, preserving the geometric integrity of the animations by
+            accounting for the character's shape and deformation. Trained in a weakly-supervised manner, TapMo can
+            accommodate a multitude of non-human meshes, both with and without associated text motions. We demonstrate
+            the effectiveness and generalizability of TapMo through rigorous qualitative and quantitative experiments.
+            Our results reveal that TapMo consistently outperforms existing auto-animation methods, delivering
+            superior-quality animations for both seen or unseen heterogeneous 3D characters.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method -->
+<section class="section" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <center>
+            <table align=center width=850px>
+              <tr>
+                <td width=850px>
+                  <center>
+                    <img class="round" style="width:850px" src="static/images/method.jpg"/>
+                  </center>
+                </td>
+              </tr>
+            </table>
+            <table align=center width=850px>
+              <tr>
+                <td>
+                  An overview of the TapMo pipeline. Given a non-rigged mesh and a motion description input by the user,
+                  the Mesh Handle Predictor $\lambda (\cdot)$ predicts mesh handles and skinning weights to control the
+                  mesh. The Shape-aware Motion Diffusion $\mu (\cdot)$ generates a text-guided and mesh-specific motion
+                  for the character using the motion description and the mesh deformation feature ${f}_{\phi}$ extracted
+                  by the Mesh Handle Predictor.
+                </td>
+              </tr>
+            </table>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+<!-- video carousel -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Results</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <!-- 在顶部添加说明性文字的写法，但是得把原来的item的class去掉，但是会导致视频不是圆角 -->
+        <!-- <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0001.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis2" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0002.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis3" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0003.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis4" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0004.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis5" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0005.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis6" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis7" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0007.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis8" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0008.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis9" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0009.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0010.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0011.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0012.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0013.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0014.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0015.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0016.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0017.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0018.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0019.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0020.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div style="height: 20px; background-color: lightgrey; text-align: center; margin: 0 5px 0 5px;">
+          <span>description words</span>
+          <video poster="" id="pelvis1" autoplay controls muted loop height="90%">
+            <source src="./static/videos/0021.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0001.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0002.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0003.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0004.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0005.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0007.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0008.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0009.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0010.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0011.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0015.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0016.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0020.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0021.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- video carousel -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3"></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0012.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0013.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0014.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0017.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0018.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/videos/0019.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper poster -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <center>
+        <h2 class="title is-3">Technical Paper</h2>
+      </center>
+      <br>
+      <hr>
+      <!-- <table align=center width=450px> -->
+      <table align=center width=800px>
+        <tr>
+          <td><a href="https://arxiv.org/abs/2310.12678"><img class="layered-paper-big" style="height:175px"
+                                                    src="static/images/paper.jpg"/></a></td>
+          <td><span style="font-size:10pt">Jiaxu Zhang, Shaoli Huang, Zhigang Tu, Xin Chen, Xiaohang Zhan, Gang Yu, Ying Shan<br>
+				<b>TapMo: Shape-aware Motion Generation of Skeleton-free Characters</b><br>
+				arXiv:2310.12678, 2023.<br>
+            <!--(<a href="https://arxiv.org/pdf/2303.05938.pdf">camera ready</a>)<br>-->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <!-- <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe> -->
+
+    </div>
+  </div>
+</section>
+<!--End paper poster -->
+
+
+<!-- BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{zhang2023tapmo,
+      title={TapMo: Shape-aware Motion Generation of Skeleton-free Characters}, 
+      author={Jiaxu Zhang and Shaoli Huang and Zhigang Tu and Xin Chen and Xiaohang Zhan and Gang Yu and Ying Shan},
+      year={2023},
+      eprint={2310.12678},
+      archivePrefix={arXiv},
+      primaryClass={cs.GR}
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                                target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+
+            This page was built using the <a href="https://nerfies.github.io/" target="_blank">Nerfies website</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
